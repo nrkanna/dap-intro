@@ -21,4 +21,4 @@ tools/performance-tests/jmeter/jmeter.log
 files/haproxy/master/haproxy.cfg
 
 # Certificates
-generate-certs/certificates/*
+**/certificates/*
