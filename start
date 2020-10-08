@@ -43,10 +43,10 @@ done
 
 trap finish EXIT
 
-export IMAGE_TAG=$TAG
+export VERSION=$TAG
 
 if [ "$PULL_ARGS" == "--pull" ]; then
-  docker pull registry2.itci.conjur.net/conjur-appliance:$IMAGE_TAG
+  docker pull registry2.itci.conjur.net/conjur-appliance:$VERSION
   docker pull conjurinc/cli5
 fi
 

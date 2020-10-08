@@ -78,6 +78,17 @@ services:
       - ./system/configuration:/opt/cyberark/dap/configuration:Z
       - ./system/logs/master-3:/var/log/conjur:Z
       - ./files:/conjur_files
+  
+  conjur:
+    image: registry2.itci.conjur.net/conjur-appliance:${VERSION}
+    ports:
+      - "447:443"
+      - "80:444"
+    security_opt:
+        - "seccomp:./seccomp.json"
+    volumes:
+      - ./config:/opt/config:Z
+      - ./system/logs/conjur:/var/log/conjur:z
 
   conjur-follower.mycompany.local:
     image: haproxy:2.1-alpine
